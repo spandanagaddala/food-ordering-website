@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FoodieHub | Food Ordering</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar container">
+        <div class="brand">
+          <div class="brand-mark">F</div>
+          <span>FoodieHub</span>
+        </div>
+
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#menu">Menu</a>
+          <a href="#offers">Offers</a>
+          <a href="#reviews">Reviews</a>
+        </div>
+
+        <button class="cart-button" type="button">
+          <span>Cart</span>
+          <span id="cart-count" class="cart-count">0</span>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="container hero-content">
+          <div class="hero-text">
+            <p class="eyebrow">Fast delivery • Fresh ingredients</p>
+            <h1>Craving something tasty?</h1>
+            <p class="subtitle">
+              Explore delicious meals and drinks delivered hot to your door in minutes.
+            </p>
+
+            <div class="cta-row">
+              <a href="#menu" class="primary-btn">Order Now</a>
+              <a href="#offers" class="secondary-btn">View Offers</a>
+            </div>
+
+            <div class="stats">
+              <div>
+                <strong>1.2k+</strong>
+                <span>Orders/day</span>
+              </div>
+              <div>
+                <strong>4.9/5</strong>
+                <span>Customer rating</span>
+              </div>
+              <div>
+                <strong>20 min</strong>
+                <span>Average delivery</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="food-card main-card">
+              <img
+                src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80"
+                alt="Burger meal"
+              />
+            </div>
+            <div class="mini-card card-one">
+              <span>Hot Deal</span>
+              <strong>50% OFF</strong>
+            </div>
+            <div class="mini-card card-two">
+              <span>Rating</span>
+              <strong>4.9</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="offers" class="offers container">
+        <div class="offer-box">
+          <span>Free Delivery</span>
+          <strong>On orders above $25</strong>
+        </div>
+        <div class="offer-box accent">
+          <span>Weekend Combo</span>
+          <strong>Save up to 30%</strong>
+        </div>
+        <div class="offer-box">
+          <span>New Customer</span>
+          <strong>Get $10 welcome credit</strong>
+        </div>
+      </section>
+
+      <section id="menu" class="menu-section container">
+        <div class="section-heading">
+          <p>Popular menu</p>
+          <h2>Fresh picks for every craving</h2>
+        </div>
+
+        <div class="category-filters" id="category-filters"></div>
+        <div id="menu-grid" class="menu-grid"></div>
+      </section>
+
+      <section id="reviews" class="reviews container">
+        <div class="section-heading left">
+          <p>What customers say</p>
+          <h2>Trusted by food lovers</h2>
+        </div>
+
+        <div class="review-grid">
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>“The burgers were delicious and delivery was super fast.”</p>
+            <strong>— Sarah M.</strong>
+          </article>
+
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>“Everything tasted fresh and looked amazing. Great value!”</p>
+            <strong>— Daniel P.</strong>
+          </article>
+
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>“I ordered pizza for dinner and it arrived hot and perfect.”</p>
+            <strong>— Maya K.</strong>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <aside class="cart-panel" id="cart-panel">
+      <div class="cart-header">
+        <h3>Your Order</h3>
+        <button id="close-cart" aria-label="Close cart">×</button>
+      </div>
+
+      <div id="cart-items" class="cart-items"></div>
+
+      <div class="cart-summary">
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <strong id="subtotal">$0.00</strong>
+        </div>
+        <div class="summary-row">
+          <span>Delivery</span>
+          <strong id="delivery">$0.00</strong>
+        </div>
+        <div class="summary-row total">
+          <span>Total</span>
+          <strong id="total">$0.00</strong>
+        </div>
+      </div>
+
+      <form id="checkout-form" class="checkout-form">
+        <label>
+          Full Name
+          <input type="text" name="name" placeholder="Your name" required />
+        </label>
+
+        <label>
+          Phone Number
+          <input type="tel" name="phone" placeholder="(123) 456-7890" required />
+        </label>
+
+        <label>
+          Delivery Address
+          <textarea name="address" rows="3" placeholder="Street, city, zip code" required></textarea>
+        </label>
+
+        <button type="submit" class="order-btn">Place Order</button>
+      </form>
+    </aside>
+
+    <div id="toast" class="toast" aria-live="polite"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
